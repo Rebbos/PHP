@@ -1,0 +1,25 @@
+<?php
+// Reb Miguel Luys Dy Nigoza
+// BSIT-201
+$totalScore = 0;
+$subjects = array("Math", "Science", "English", "History");
+foreach ($subjects as $subject) {
+    echo "Enter the score for $subject: ";
+    $score = (int)readline();
+    while ($score < 0 || $score > 100) {
+        echo "Invalid score! Please enter a score between 0 and 100 for $subject: ";
+        $score = (int)readline();
+    }
+    $totalScore += $score;
+}
+$avg = $totalScore / count($subjects);
+if ($avg >= 90) {
+    echo "Excellent! Keep up the good work!\nAVG: $avg";
+} elseif ($avg >= 80) {
+    echo "Good job! \nAVG: $avg";
+} elseif ($avg >= 70) {
+    echo "Fair, but you can do better.\nAVG: $avg";
+} else {
+    echo "Needs improvement!\nAVG: $avg";
+}
+?>
